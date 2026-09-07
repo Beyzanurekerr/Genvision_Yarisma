@@ -1,0 +1,1208 @@
+{
+    "team_name": "nova",
+    "team_id": "918091",
+    "application_id": "918091",
+    "competition_level": "UNIVERSITE VE UZERI",
+    "predictions": [
+        {
+            "id": "VAR_004572",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0723
+        },
+        {
+            "id": "VAR_004387",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0543
+        },
+        {
+            "id": "VAR_001540",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0014
+        },
+        {
+            "id": "VAR_000808",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9995
+        },
+        {
+            "id": "VAR_000082",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9995
+        },
+        {
+            "id": "VAR_002119",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0007
+        },
+        {
+            "id": "VAR_006245",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0481
+        },
+        {
+            "id": "VAR_000163",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1124
+        },
+        {
+            "id": "VAR_005692",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1101
+        },
+        {
+            "id": "VAR_006030",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9009
+        },
+        {
+            "id": "VAR_004890",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0489
+        },
+        {
+            "id": "VAR_000584",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1962
+        },
+        {
+            "id": "VAR_003833",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.039
+        },
+        {
+            "id": "VAR_001918",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.072
+        },
+        {
+            "id": "VAR_002625",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1279
+        },
+        {
+            "id": "VAR_001845",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0668
+        },
+        {
+            "id": "VAR_001979",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1652
+        },
+        {
+            "id": "VAR_000636",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9999
+        },
+        {
+            "id": "VAR_005011",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0361
+        },
+        {
+            "id": "VAR_005563",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1433
+        },
+        {
+            "id": "VAR_002538",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.4147
+        },
+        {
+            "id": "VAR_002184",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9982
+        },
+        {
+            "id": "VAR_005553",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1113
+        },
+        {
+            "id": "VAR_006223",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0264
+        },
+        {
+            "id": "VAR_003782",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0894
+        },
+        {
+            "id": "VAR_000884",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.8987
+        },
+        {
+            "id": "VAR_001654",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.2217
+        },
+        {
+            "id": "VAR_005367",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.2217
+        },
+        {
+            "id": "VAR_004860",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9729
+        },
+        {
+            "id": "VAR_002738",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.16
+        },
+        {
+            "id": "VAR_000023",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9998
+        },
+        {
+            "id": "VAR_005772",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9998
+        },
+        {
+            "id": "VAR_002449",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.921
+        },
+        {
+            "id": "VAR_004889",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1645
+        },
+        {
+            "id": "VAR_002343",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0446
+        },
+        {
+            "id": "VAR_004330",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0007
+        },
+        {
+            "id": "VAR_000637",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9998
+        },
+        {
+            "id": "VAR_001186",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1295
+        },
+        {
+            "id": "VAR_005545",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0009
+        },
+        {
+            "id": "VAR_000578",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9998
+        },
+        {
+            "id": "VAR_005018",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0001
+        },
+        {
+            "id": "VAR_002397",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9946
+        },
+        {
+            "id": "VAR_005647",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9996
+        },
+        {
+            "id": "VAR_004634",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0007
+        },
+        {
+            "id": "VAR_002020",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9696
+        },
+        {
+            "id": "VAR_001239",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.092
+        },
+        {
+            "id": "VAR_001880",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0813
+        },
+        {
+            "id": "VAR_004829",
+            "panel": "MASTER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9681
+        },
+        {
+            "id": "VAR_001582",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.2217
+        },
+        {
+            "id": "VAR_001872",
+            "panel": "MASTER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0721
+        },
+        {
+            "id": "VAR_000892",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0905
+        },
+        {
+            "id": "VAR_000702",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7703
+        },
+        {
+            "id": "VAR_004564",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_001110",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9972
+        },
+        {
+            "id": "VAR_004425",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1764
+        },
+        {
+            "id": "VAR_004540",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7166
+        },
+        {
+            "id": "VAR_001001",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.8018
+        },
+        {
+            "id": "VAR_003704",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_002393",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7762
+        },
+        {
+            "id": "VAR_004411",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7542
+        },
+        {
+            "id": "VAR_003586",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.192
+        },
+        {
+            "id": "VAR_000604",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.004
+        },
+        {
+            "id": "VAR_004563",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7464
+        },
+        {
+            "id": "VAR_001006",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_000608",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9981
+        },
+        {
+            "id": "VAR_000960",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_003658",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7339
+        },
+        {
+            "id": "VAR_004541",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_004732",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.4329
+        },
+        {
+            "id": "VAR_000605",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9992
+        },
+        {
+            "id": "VAR_003676",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.2174
+        },
+        {
+            "id": "VAR_003692",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9991
+        },
+        {
+            "id": "VAR_001101",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9991
+        },
+        {
+            "id": "VAR_001069",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.772
+        },
+        {
+            "id": "VAR_000675",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.6294
+        },
+        {
+            "id": "VAR_001036",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_003563",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7536
+        },
+        {
+            "id": "VAR_004432",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0616
+        },
+        {
+            "id": "VAR_004537",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.4551
+        },
+        {
+            "id": "VAR_001083",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0044
+        },
+        {
+            "id": "VAR_004402",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.722
+        },
+        {
+            "id": "VAR_002398",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.8472
+        },
+        {
+            "id": "VAR_004702",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1122
+        },
+        {
+            "id": "VAR_004669",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0017
+        },
+        {
+            "id": "VAR_000590",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7927
+        },
+        {
+            "id": "VAR_004723",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_001035",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_004606",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0906
+        },
+        {
+            "id": "VAR_001251",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9975
+        },
+        {
+            "id": "VAR_004521",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7831
+        },
+        {
+            "id": "VAR_000988",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9987
+        },
+        {
+            "id": "VAR_004399",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1858
+        },
+        {
+            "id": "VAR_001074",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7848
+        },
+        {
+            "id": "VAR_000593",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9988
+        },
+        {
+            "id": "VAR_004346",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9992
+        },
+        {
+            "id": "VAR_000901",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.0912
+        },
+        {
+            "id": "VAR_000992",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7552
+        },
+        {
+            "id": "VAR_003575",
+            "panel": "KANSER",
+            "predicted_class": "0",
+            "predicted_prob": 0.1849
+        },
+        {
+            "id": "VAR_003660",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.9991
+        },
+        {
+            "id": "VAR_000928",
+            "panel": "KANSER",
+            "predicted_class": "1",
+            "predicted_prob": 0.7727
+        },
+        {
+            "id": "VAR_002962",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4211
+        },
+        {
+            "id": "VAR_003021",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4319
+        },
+        {
+            "id": "VAR_002742",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4311
+        },
+        {
+            "id": "VAR_002593",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4175
+        },
+        {
+            "id": "VAR_002668",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4829
+        },
+        {
+            "id": "VAR_002928",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4376
+        },
+        {
+            "id": "VAR_002734",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4581
+        },
+        {
+            "id": "VAR_003122",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4174
+        },
+        {
+            "id": "VAR_002879",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4323
+        },
+        {
+            "id": "VAR_003238",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.1709
+        },
+        {
+            "id": "VAR_003044",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.996
+        },
+        {
+            "id": "VAR_002777",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9955
+        },
+        {
+            "id": "VAR_002904",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002993",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002883",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002819",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.439
+        },
+        {
+            "id": "VAR_002983",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4429
+        },
+        {
+            "id": "VAR_002759",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_003008",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4398
+        },
+        {
+            "id": "VAR_003169",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4139
+        },
+        {
+            "id": "VAR_002788",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9956
+        },
+        {
+            "id": "VAR_002888",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4201
+        },
+        {
+            "id": "VAR_002736",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4435
+        },
+        {
+            "id": "VAR_002733",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4269
+        },
+        {
+            "id": "VAR_002815",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4861
+        },
+        {
+            "id": "VAR_002998",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4294
+        },
+        {
+            "id": "VAR_002749",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_002863",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002986",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4131
+        },
+        {
+            "id": "VAR_003054",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4704
+        },
+        {
+            "id": "VAR_002675",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4252
+        },
+        {
+            "id": "VAR_002650",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4177
+        },
+        {
+            "id": "VAR_002692",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002729",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.027
+        },
+        {
+            "id": "VAR_003032",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4442
+        },
+        {
+            "id": "VAR_002735",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4197
+        },
+        {
+            "id": "VAR_002970",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4862
+        },
+        {
+            "id": "VAR_002669",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4521
+        },
+        {
+            "id": "VAR_003120",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4368
+        },
+        {
+            "id": "VAR_002827",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4312
+        },
+        {
+            "id": "VAR_002840",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9905
+        },
+        {
+            "id": "VAR_002760",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002910",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4249
+        },
+        {
+            "id": "VAR_002558",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4551
+        },
+        {
+            "id": "VAR_002679",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002820",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9955
+        },
+        {
+            "id": "VAR_002929",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4137
+        },
+        {
+            "id": "VAR_002707",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_002833",
+            "panel": "PAH",
+            "predicted_class": "1",
+            "predicted_prob": 0.9973
+        },
+        {
+            "id": "VAR_003118",
+            "panel": "PAH",
+            "predicted_class": "0",
+            "predicted_prob": 0.4136
+        },
+        {
+            "id": "VAR_001979",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001959",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001788",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001874",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001775",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001781",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001918",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001796",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001961",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.0296
+        },
+        {
+            "id": "VAR_001834",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001942",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001841",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001924",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001875",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001926",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001958",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001953",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001869",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001833",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001882",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001936",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001880",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001797",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001976",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001791",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001795",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001824",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001916",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001771",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001825",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001881",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001846",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.0296
+        },
+        {
+            "id": "VAR_001790",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001968",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001948",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001893",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001844",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001780",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001847",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001816",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001923",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001842",
+            "panel": "CFTR",
+            "predicted_class": "1",
+            "predicted_prob": 0.9704
+        },
+        {
+            "id": "VAR_001822",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001892",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001930",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001784",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001951",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001884",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        },
+        {
+            "id": "VAR_001839",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4296
+        },
+        {
+            "id": "VAR_001838",
+            "panel": "CFTR",
+            "predicted_class": "0",
+            "predicted_prob": 0.4295
+        }
+    ]
+}
