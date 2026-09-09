@@ -1,0 +1,12 @@
+# GenVision - FİNAL GÜNÜ (16 Eylül 2026) minimal çalıştırma ortamı
+# Yalnızca predict_final.py'yi (ve train_deploy.py'yi, önceden) çalıştırmak için yeterli.
+# İnternet YOK -- bu ortamı ve models/deploy/*.joblib dosyalarını final gününden ÖNCE
+# kendi bilgisayarınızda kurup test edin (predict_final.py --dry-run ile).
+# pip install -r requirements-inference.txt
+pandas==2.3.1
+numpy==2.3.2
+scikit-learn==1.7.1
+xgboost==3.4.1
+lightgbm==4.6.0
+catboost==1.2.10
+joblib==1.5.1
