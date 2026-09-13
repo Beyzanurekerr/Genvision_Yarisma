@@ -99,7 +99,23 @@ class GenVisionFeaturizer:
         self.fitted = True
         return self
 
+    def _check_schema(self, df: pd.DataFrame):
+        """Egitimde ogrenilen sutunlarin (AL_/EK_/CAT_/AA_) test dosyasinda da
+        var oldugunu dogrular. Eksikse KeyError yerine ACIKLAYICI bir hata
+        verir -- final gunu (internetsiz, duzeltme sansi yok) sessiz KeyError
+        yerine ne oldugunu anlatan bir mesaj cok daha degerli."""
+        expected = self.al_cols + self.ek_cols + self.cat_cols + self.aa_cols
+        missing = [c for c in expected if c not in df.columns]
+        if missing:
+            raise ValueError(
+                f"Test verisinde eğitim şemasında olan {len(missing)} sütun eksik: "
+                f"{missing[:10]}{'...' if len(missing) > 10 else ''}. "
+                "Test dosyasının doğru panel/dosya olduğunu ve sütun adlarının "
+                "eğitim verisiyle birebir eşleştiğini doğrulayın."
+            )
+
     def _base_features(self, df: pd.DataFrame) -> pd.DataFrame:
+        self._check_schema(df)
         out = pd.DataFrame(index=df.index)
 
         # --- AL (frekans) blok: eksiklik = nadirlik sinyali, ham NaN korunur (tree-native görünüm ayrı) ---

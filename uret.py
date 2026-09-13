@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-GenVision - Tek Komutla Final JSON Üretici
-===========================================
-src/predict_final.py'yi doğru dosya yollarıyla (veri/test/*.csv,
-models/deploy/*.joblib) otomatik çağırıp TEAM_918091_FINAL.json'u kök
-dizinde üretir. Kök dizinden çalıştırın:
+GenVision - YEREL HIZLI DENEME Aracı (FİNAL GÜNÜ KULLANMAYIN)
+===========================================================
+UYARI: Bu script data/test/YARISMA_TEST_{PANEL}.csv dosya adlarını SABİT
+(hardcoded) olarak kullanır -- bunlar generate_dummy_test.py'nin ürettiği
+SAHTE dosyalardır. Final günü organizasyonun USB'den vereceği gerçek test
+dosyalarının adı KESİNLİKLE FARKLI olacak; bu script o dosyaları BULAMAZ ve
+"dosya bulunamadı" hatasıyla durur.
+
+FİNAL GÜNÜ KULLANILACAK GERÇEK KOMUT (bkz. README.md, bu script DEĞİL):
+    cd src && python predict_final.py --out ../TEAM_918091_FINAL.json \
+        --master <gerçek yol> --kanser <gerçek yol> --pah <gerçek yol> --cftr <gerçek yol>
+
+Bu script SADECE şunlar için kullanılır: (a) paket/dosya eksikliği hızlı
+kontrolü, (b) data/test/ altındaki kendi sahte dosyalarımızla hızlı bir
+uçtan-uca deneme. Kök dizinden çalıştırın:
 
     python uret.py
 
@@ -17,7 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
-TEST_DIR = ROOT / "veri" / "test"
+TEST_DIR = ROOT / "data" / "test"
 DEPLOY_DIR = ROOT / "models" / "deploy"
 OUT_PATH = ROOT / "TEAM_918091_FINAL.json"
 
@@ -70,6 +80,9 @@ def main():
         cmd += [flag, str(TEST_DIR / f"YARISMA_TEST_{panel}.csv")]
     if "--dry-run" in sys.argv[1:]:
         cmd = [sys.executable, str(SRC / "predict_final.py"), "--dry-run"]
+    else:
+        print("UYARI: Bu script SABİT (data/test/YARISMA_TEST_*.csv) sahte dosyaları kullanıyor.")
+        print("       FİNAL GÜNÜ bunun yerine README.md'deki predict_final.py komutunu kullanın.\n")
 
     print("Çalıştırılıyor:", " ".join(cmd))
     sonuc = subprocess.run(cmd, cwd=str(SRC))

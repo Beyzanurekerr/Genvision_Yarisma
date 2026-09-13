@@ -1,0 +1,111 @@
+{
+  "guard_hi": 1.8,
+  "guard_lo": 0.55,
+  "candidates_scanned": {
+    "1.8/0.55": {
+      "guard_hi": 1.8,
+      "guard_lo": 0.55,
+      "kaymasiz_f1": 0.5718102052477425,
+      "en_kotu_f1": 0.5332433345945466,
+      "ortalama_f1": 0.5457973983563587,
+      "per_shift_f1": {
+        "-1.5": 0.5373398551058284,
+        "-1.0": 0.5581325176734376,
+        "-0.5": 0.5407256558958947,
+        "0.0": 0.5718102052477425,
+        "0.5": 0.5332433345945466,
+        "1.0": 0.5396299063406074,
+        "1.5": 0.5397003136364524
+      }
+    },
+    "1.4/0.7": {
+      "guard_hi": 1.4,
+      "guard_lo": 0.7,
+      "kaymasiz_f1": 0.5529295355079213,
+      "en_kotu_f1": 0.53685087761034,
+      "ortalama_f1": 0.5408071816490913,
+      "per_shift_f1": {
+        "-1.5": 0.53685087761034,
+        "-1.0": 0.5376384760843782,
+        "-0.5": 0.5392561692001111,
+        "0.0": 0.5529295355079213,
+        "0.5": 0.5395745858679825,
+        "1.0": 0.5397003136364524,
+        "1.5": 0.5397003136364524
+      }
+    },
+    "1.15/0.85": {
+      "guard_hi": 1.15,
+      "guard_lo": 0.85,
+      "kaymasiz_f1": 0.5450696365720595,
+      "en_kotu_f1": 0.5377041533713143,
+      "ortalama_f1": 0.5399708750364781,
+      "per_shift_f1": {
+        "-1.5": 0.5393521816531347,
+        "-1.0": 0.5377041533713143,
+        "-0.5": 0.5385870698923383,
+        "0.0": 0.5450696365720595,
+        "0.5": 0.5396824564935953,
+        "1.0": 0.5397003136364524,
+        "1.5": 0.5397003136364524
+      }
+    }
+  },
+  "fixed_vs_auto_per_panel": {
+    "MASTER": {
+      "selected_model": "WBlend_RC_0.6",
+      "kaymasiz_f1_fixed": 0.5318114802582204,
+      "kaymasiz_f1_auto": 0.5318114802582204,
+      "en_kotu_f1_fixed": 0.175534198786478,
+      "en_kotu_f1_auto": 0.46525341272878973,
+      "ortalama_f1_fixed": 0.3958911157784288,
+      "ortalama_f1_auto": 0.47893896980929723
+    },
+    "KANSER": {
+      "selected_model": "WBlend_XC_0.3",
+      "kaymasiz_f1_fixed": 0.6598636154099338,
+      "kaymasiz_f1_auto": 0.6598636154099338,
+      "en_kotu_f1_fixed": 0.5537146264091225,
+      "en_kotu_f1_auto": 0.5556850193173528,
+      "ortalama_f1_fixed": 0.6099986972710759,
+      "ortalama_f1_auto": 0.6286784949993466
+    },
+    "PAH": {
+      "selected_model": "LightGBM",
+      "kaymasiz_f1_fixed": 0.6009725479411125,
+      "kaymasiz_f1_auto": 0.4840894132896973,
+      "en_kotu_f1_fixed": 0.49455899817218846,
+      "en_kotu_f1_auto": 0.4840894132896973,
+      "ortalama_f1_fixed": 0.5566338633228015,
+      "ortalama_f1_auto": 0.5067958947565614
+    },
+    "CFTR": {
+      "selected_model": "Blend_XGB_CAT",
+      "kaymasiz_f1_fixed": 0.6100586110851379,
+      "kaymasiz_f1_auto": 0.6114763120331184,
+      "en_kotu_f1_fixed": 0.0,
+      "en_kotu_f1_auto": 0.5427910192033087,
+      "ortalama_f1_fixed": 0.3313550725229112,
+      "ortalama_f1_auto": 0.5687762338602287
+    }
+  },
+  "fixed_vs_auto_summary": {
+    "ortalama_f1_fixed": 0.47346968722380434,
+    "ortalama_f1_auto": 0.5457973983563584,
+    "ortalama_f1_kazanc": 0.0723277111325541,
+    "en_kotu_f1_fixed": 0.30595195584194723,
+    "en_kotu_f1_auto": 0.5119547161347872,
+    "en_kotu_f1_kazanc": 0.20600276029283993
+  },
+  "n_sim": 500,
+  "logit_shifts": [
+    -1.5,
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0,
+    1.5
+  ],
+  "not": "Simülasyon SADECE yarışma eğitim verisinin OOF olasılıklarından üretildi (gerçek final test verisi henüz elimizde yok); logit kayması ile kalibrasyon/dağılım kayması senaryoları taklit edildi."
+}

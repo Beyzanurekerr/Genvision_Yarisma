@@ -3,8 +3,8 @@ import pandas as pd
 
 def create_dummy_test_files():
     panels = ['MASTER', 'KANSER', 'PAH', 'CFTR']
-    train_dir = os.path.join('veri', 'egitim')
-    test_dir = os.path.join('veri', 'test')
+    train_dir = 'data'
+    test_dir = os.path.join('data', 'test')
     os.makedirs(test_dir, exist_ok=True)
 
     for panel in panels:

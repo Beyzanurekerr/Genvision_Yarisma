@@ -1,10 +1,25 @@
-# GenVision - FİNAL GÜNÜ (16 Eylül 2026) minimal çalıştırma ortamı
-# Yalnızca predict_final.py'yi (ve train_deploy.py'yi, önceden) çalıştırmak için yeterli.
-# İnternet YOK -- bu ortamı ve models/deploy/*.joblib dosyalarını final gününden ÖNCE
-# kendi bilgisayarınızda kurup test edin (predict_final.py --dry-run ile).
+# GenVision - final gunu SADECE tahmin (predict_final.py / uret.py) icin gereken
+# minimal ortam. requirements.txt (tune/train/shap/rapor) icermez.
+#
+# 13.09.2026: bu proje icinde HAZIR bulunan `venv/` (Windows, Python 3.13.12)
+# gercek final makinesi ortamidir varsayilip surumleri BURAYA alindi; deploy
+# modelleri (models/deploy/*.joblib) de bu venv ile egitilip paketlendi --
+# yani "modelleri egiten ortam" ile "burasi" artik AYNI, ekstra dogrulama
+# gerekmez. (Onceki surum -- numpy 1.26.4/xgboost 3.2.0 -- WSL'deki
+# /usr/bin/python3'e goreydi; venv ile tahmin birebir ayni cikti verdigi
+# test edildi ama tutarlilik icin gercek ortama gecildi.)
+#
+# ONEMLI: final gunu makinesinde kurulu olan sklearn/xgboost/lightgbm/catboost/
+# numpy surumleri BURADAKILERLE (ve modelleri egiten/deploy eden makineyle) AYNI
+# OLMALI. Farkli surum, models/deploy/*.joblib yuklerken sessiz/gurultulu
+# uyumsuzluga (bkz. InconsistentVersionWarning, "older version of xgboost")
+# hatta bazi surum sicramalarinda tam yuklenememeye yol acabilir. Internet
+# olmayan final gununde bu duzeltilemez -- once dogrulayin.
+#
 # pip install -r requirements-inference.txt
 pandas==2.3.1
 numpy==2.3.2
+scipy==1.18.1
 scikit-learn==1.7.1
 xgboost==3.4.1
 lightgbm==4.6.0

@@ -40,6 +40,22 @@ MODEL_KEYS = {
     "Blend_All3": "p_blend_all3", "Blend_All4": "p_blend_all4",
 }
 
+# Bake-off'un otomatik seçtiği kazananı görmezden gelip belirtilen modele
+# ZORLAR -- eşik yine bu panelin GÜNCEL OOF'una göre yeniden hesaplanır
+# (eski/sunumdaki eşik DEĞERİ kopyalanmaz, sadece model adı sabitlenir).
+# Neden: NOVA_GENVİSİON_SUNUM.pdf (Slayt 5) bu dört modeli "seçilen model"
+# olarak teslim etti ve sunum artık güncellenemiyor; retune sonrası bake-off
+# farklı bir kazanan bulsa da (bkz. Blend_RF_CAT/XGBoost/WBlend_LC_0.4/
+# CatBoost), sunumla tutarlılık için isimler burada zorlanıyor. Ölçülen bedel
+# (13.09.2026, guard_scan.py'den önce): 4 panel ortalaması proj.combined
+# skorunda ~-0.026 (çoğunlukla CFTR -0.074) -- kabul edildi.
+FORCE_MODEL = {
+    "MASTER": "WBlend_RC_0.6",
+    "KANSER": "WBlend_XC_0.3",
+    "PAH": "LightGBM",
+    "CFTR": "Blend_XGB_CAT",
+}
+
 THRESH_GRID = np.round(np.arange(0.05, 0.96, 0.01), 2)
 N_BOOTSTRAP = 2000
 CI = 0.90  # %90 güven aralığı (5. - 95. yüzdelik)
@@ -155,7 +171,12 @@ def main():
         y = data["y"]
         best_model, best_combined, best_payload = None, -1e9, None
         wblends = weighted_blend_candidates(data)
-        for model_name, key in list(MODEL_KEYS.items()) + [(k, k) for k in wblends]:
+        candidates = list(MODEL_KEYS.items()) + [(k, k) for k in wblends]
+        if panel in FORCE_MODEL:
+            forced = FORCE_MODEL[panel]
+            candidates = [(n, k) for n, k in candidates if n == forced]
+            assert candidates, f"{panel}: FORCE_MODEL={forced!r} aday havuzunda yok"
+        for model_name, key in candidates:
             if key in wblends:
                 p = wblends[key]
             elif key not in data.files:

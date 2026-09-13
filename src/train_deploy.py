@@ -43,11 +43,14 @@ MODELS_DIR = ROOT / "models"
 DEPLOY_DIR = MODELS_DIR / "deploy"
 DEPLOY_DIR.mkdir(exist_ok=True)
 
+# test_pat/test_ben: threshold.py / train_final.py ile AYNI (PDR'deki varsayılan
+# test kompozisyonu) -- predict_final.py'deki kalibrasyon kayması güvenlik ağının
+# "beklenen pozitif oran" referansı buradan (expected_pos_rate) bundle'a gömülür.
 PANELS = {
-    "MASTER": "YARISMA_TRAIN_MASTER.csv",
-    "KANSER": "YARISMA_TRAIN_KANSER.csv",
-    "PAH": "YARISMA_TRAIN_PAH.csv",
-    "CFTR": "YARISMA_TRAIN_CFTR.csv",
+    "MASTER": {"file": "YARISMA_TRAIN_MASTER.csv", "test_pat": 500, "test_ben": 3000},
+    "KANSER": {"file": "YARISMA_TRAIN_KANSER.csv", "test_pat": 100, "test_ben": 500},
+    "PAH":    {"file": "YARISMA_TRAIN_PAH.csv",    "test_pat": 100, "test_ben": 250},
+    "CFTR":   {"file": "YARISMA_TRAIN_CFTR.csv",   "test_pat": 20,  "test_ben": 100},
 }
 
 with open(MODELS_DIR / "best_hparams.json", encoding="utf-8") as f:
@@ -69,8 +72,8 @@ def build_models(panel):
     return xgb_clf, lgb_clf, rf_clf, cat_clf
 
 
-def deploy_panel(panel_name, fname):
-    df = pd.read_csv(DATA_DIR / fname)
+def deploy_panel(panel_name, cfg):
+    df = pd.read_csv(DATA_DIR / cfg["file"])
     y = df["Label"].astype(int).values
 
     feat = GenVisionFeaturizer().fit(df)  # TÜM veriyle fit -- deploy için doğru davranış
@@ -99,6 +102,7 @@ def deploy_panel(panel_name, fname):
         "meta_model": meta,
         "selected_model": THRESH[panel_name]["selected_model"],
         "threshold": THRESH[panel_name]["test_threshold"],
+        "expected_pos_rate": cfg["test_pat"] / (cfg["test_pat"] + cfg["test_ben"]),
         "n_train_rows": len(df),
     }
     out_path = DEPLOY_DIR / f"{panel_name}_deploy.joblib"
@@ -108,8 +112,8 @@ def deploy_panel(panel_name, fname):
 
 
 def main():
-    for panel_name, fname in PANELS.items():
-        deploy_panel(panel_name, fname)
+    for panel_name, cfg in PANELS.items():
+        deploy_panel(panel_name, cfg)
     print("\nTüm panellerin deploy paketleri hazır:", DEPLOY_DIR)
 
 

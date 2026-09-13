@@ -1,0 +1,12 @@
+# Python ortamları (venv/ kendi .gitignore'unu zaten içeriyor, burada da netlik için)
+venv/
+venv_eski_miniconda_bagimli/
+venv_yedek/
+
+# Python önbellek/derlenmiş dosyalar
+__pycache__/
+*.pyc
+
+# CatBoost eğitim log klasörü (her çalıştırmada yeniden üretilir)
+src/catboost_info/
+**/catboost_info/
