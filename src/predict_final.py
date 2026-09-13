@@ -18,6 +18,12 @@ Kullanım (gerçek final günü, panel başına AYRI dosya verilirse):
 Kullanım (TEK bir dosyada, "Panel" sütunuyla karışık verilirse):
     cd src && python predict_final.py --out ../TEAM_918091_FINAL.json --input path/to/test.csv
 
+Kullanım (dosyaları tek tek belirtmeden, ../data/final_test/ klasörüne koyup
+otomatik buldurma -- dosya ADINDA panel adı geçmesi yeterli, ör. "MASTER" gibi):
+    cd src && python predict_final.py --out ../TEAM_918091_FINAL.json
+(hiç argüman verilmezse, --dry-run/--master/.../--input hiçbiri yoksa,
+varsayılan olarak ../data/final_test/ taranır.)
+
 Kuru deneme (gerçek test verisi olmadan, kendi eğitim verimizle format+
 uçtan-uca doğrulama için):
     cd src && python predict_final.py --dry-run
@@ -263,6 +269,54 @@ def validate_predictions(preds):
     print(f"Doğrulama OK: {len(preds)} tahmin, {len(ids_seen)} benzersiz (panel,id).")
 
 
+def find_panel_files_by_name(klasor):
+    """`klasor` içindeki .csv dosyalarını, DOSYA ADINDA panel adı (MASTER/
+    KANSER/PAH/CFTR, büyük/küçük harf duyarsız) geçmesine göre otomatik eşler
+    -- 4 panel aynı sütun şemasını paylaştığı için İÇERİKTEN otomatik panel
+    tespiti YAPILAMAZ (doğrulandı), bu yüzden eşleştirme dosya adına dayanır.
+    Bulunamayan/belirsiz (birden fazla eşleşen) paneller için elle
+    --master/--kanser/--pah/--cftr kullanılması gerektiği açıkça söylenir."""
+    klasor = Path(klasor)
+    if not klasor.is_dir():
+        raise SystemExit(f"--testdir klasörü bulunamadı: {klasor}")
+    csv_dosyalari = sorted(klasor.glob("*.csv"))
+    if not csv_dosyalari:
+        raise SystemExit(f"{klasor} içinde hiç .csv dosyası yok.")
+
+    result = {}
+    belirsiz = {}
+    for panel in PANELS:
+        eslesen = [f for f in csv_dosyalari if panel.lower() in f.stem.lower()]
+        if len(eslesen) == 1:
+            result[panel] = eslesen[0]
+        elif len(eslesen) > 1:
+            belirsiz[panel] = eslesen
+
+    print(f"[--testdir] {klasor} içinde {len(csv_dosyalari)} CSV bulundu, adına göre eşleştirme:")
+    for panel in PANELS:
+        if panel in result:
+            print(f"  {panel:8s} -> {result[panel].name}")
+        elif panel in belirsiz:
+            print(f"  {panel:8s} -> BELİRSİZ, birden fazla dosya eşleşti: "
+                  f"{[f.name for f in belirsiz[panel]]}")
+        else:
+            print(f"  {panel:8s} -> eşleşme YOK")
+
+    if belirsiz:
+        raise SystemExit(
+            f"Şu panel(ler) için birden fazla dosya adında eşleşme var: {list(belirsiz)}. "
+            "Dosya adı otomatik eşleştirme için yeterince açık değil -- bunun yerine "
+            "--master/--kanser/--pah/--cftr ile elle belirtin."
+        )
+    if not result:
+        raise SystemExit(
+            f"{klasor} içindeki hiçbir dosya adında MASTER/KANSER/PAH/CFTR geçmiyor "
+            f"(dosyalar: {[f.name for f in csv_dosyalari]}). Otomatik eşleştirme "
+            "yapılamıyor -- --master/--kanser/--pah/--cftr ile elle belirtin."
+        )
+    return {panel: guvenli_oku(path) for panel, path in result.items()}
+
+
 def split_combined_input(csv_path):
     """Organizasyon 4 ayrı dosya yerine TEK bir dosyada, panel adını bir
     sütunda vererek gönderirse (kılavuzda format belirtilmediği için ihtimal
@@ -348,6 +402,10 @@ def main():
     ap.add_argument("--pah"); ap.add_argument("--cftr")
     ap.add_argument("--input", help="Panel başına ayrı dosya yerine, hepsini içeren TEK bir "
                                      "CSV (bir 'Panel' sütunuyla panel adı belirtilmiş).")
+    ap.add_argument("--testdir", nargs="?", const=str(DATA_DIR / "final_test"), default=None,
+                     help="Dosyaları tek tek vermek yerine, bu klasördeki .csv dosyalarını "
+                          "ADLARINA göre (içinde MASTER/KANSER/PAH/CFTR geçen) otomatik eşler. "
+                          "Değer verilmezse ../data/final_test kullanılır.")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -355,10 +413,20 @@ def main():
         dry_run()
         return
 
+    hicbir_sey_verilmedi = not (args.master or args.kanser or args.pah or args.cftr
+                                 or args.input or args.testdir)
+    if hicbir_sey_verilmedi:
+        args.testdir = str(DATA_DIR / "final_test")
+        print(f"Hiçbir dosya/klasör belirtilmedi -- varsayılan olarak {args.testdir} taranıyor.")
+
     if args.input:
-        if args.master or args.kanser or args.pah or args.cftr:
-            raise SystemExit("--input, --master/--kanser/--pah/--cftr ile birlikte kullanılamaz.")
+        if args.master or args.kanser or args.pah or args.cftr or args.testdir:
+            raise SystemExit("--input, --master/--kanser/--pah/--cftr/--testdir ile birlikte kullanılamaz.")
         panel_df_map = split_combined_input(args.input)
+    elif args.testdir:
+        if args.master or args.kanser or args.pah or args.cftr:
+            raise SystemExit("--testdir, --master/--kanser/--pah/--cftr ile birlikte kullanılamaz.")
+        panel_df_map = find_panel_files_by_name(args.testdir)
     else:
         panel_df_map = {}
         if args.master: panel_df_map["MASTER"] = guvenli_oku(args.master)
@@ -366,7 +434,8 @@ def main():
         if args.pah: panel_df_map["PAH"] = guvenli_oku(args.pah)
         if args.cftr: panel_df_map["CFTR"] = guvenli_oku(args.cftr)
     if not panel_df_map:
-        raise SystemExit("En az bir panel için test dosyası verin (--master/--kanser/--pah/--cftr ya da --input) ya da --dry-run kullanın.")
+        raise SystemExit("En az bir panel için test dosyası verin (--master/--kanser/--pah/--cftr, "
+                          "--input ya da --testdir) ya da --dry-run kullanın.")
     build_submission(panel_df_map, args.out)
 
 
