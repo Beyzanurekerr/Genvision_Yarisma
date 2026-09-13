@@ -250,7 +250,7 @@ para(doc,
 para(doc,
      "Yarışma verisi bu problemi TEK bir havuz olarak değil, dört ayrı “panel” halinde "
      "sunmaktadır: MASTER (genel varyant havuzu), KANSER (kanserle ilişkili gen paneli), "
-     "PAH (pulmoner arteriyel hipertansiyon gen paneli) ve CFTR (tek gen -- kistik fibrozis "
+     "PAH (fenilketonüri gen paneli) ve CFTR (tek gen -- kistik fibrozis "
      "transmembran iletkenlik düzenleyicisi). Panellerin öznitelik dağılımları, patojenite "
      "önselleri ve örneklem büyüklükleri birbirinden belirgin şekilde farklıdır (Bölüm 2.1); "
      "bu nedenle GenVision panel başına bağımsız bir model eğitmeyi ve panele özgü karar "
