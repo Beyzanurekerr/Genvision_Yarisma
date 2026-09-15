@@ -65,15 +65,32 @@ adının gerçekte ne olduğu önemli değil, hangisini hangi panele verdiğin �
 
 ---
 
-## Önceden (finalden önce, evde) test etmek istersen
+## Önceden (finalden önce, evde) PROVA etmek istersen
 
+Bu, `--dry-run` DEĞİL — final günü kullanacağın GERÇEK komutun aynısını,
+sahte dosyalarla dener. Yukarıdaki 1-8 adımların bire bir provası:
+
+**1.** `data\test\` klasöründeki sahte dosyaları `data\final_test\`'e kopyala:
+```
+copy data\test\YARISMA_TEST_*.csv data\final_test\
+```
+
+**2.** Final günü kullanacağın GERÇEK komutu (hiç değiştirmeden) çalıştır:
 ```
 cd src
-..\venv\Scripts\python.exe predict_final.py --dry-run
+..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json
 ```
-Bu, kendi eğitim verimizle sahte bir uçtan-uca deneme yapar — `Doğrulama OK`
-ve `Kaydedildi` görürsen sistem çalışıyor demektir. **Bunu denedikten sonra
-`data\final_test\` klasörünü tekrar boşaltmayı unutma (1. adım).**
+
+**3.** Ekranda `MASTER -> YARISMA_TEST_MASTER.csv` gibi 4 satır ve en altta
+`Doğrulama OK` + `Kaydedildi` görmelisin — final günü tam olarak bunu göreceksin,
+sadece dosya adları farklı olacak.
+
+**4. ÖNEMLİ:** Provadan sonra `data\final_test\` klasörünü boşalt (1. adım) —
+yoksa final günü bu sahte dosyalar gerçeklerle karışır.
+
+*(Sadece format/JSON sağlık kontrolü istiyorsan, gerçek dosya kopyalamadan
+`..\venv\Scripts\python.exe predict_final.py --dry-run` da çalışır — ama bu
+gerçek final komutunu DENEMEZ, sadece kendi eğitim verimizi kullanır.)*
 
 ## Daha fazla bilgi
 
