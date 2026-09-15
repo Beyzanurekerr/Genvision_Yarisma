@@ -1,212 +1,153 @@
-# GenVision (Takım NOVA, 918091) — Final Günü Rehberi
+# GenVision (Takım NOVA, 918091) — Kurulum ve Çalıştırma
 
-## İçindekiler
-1. [Final günü — yapılacaklar listesi](#1-final-günü--yapılacaklar-listesi)
-2. [Bir şey ters giderse](#2-bir-şey-ters-giderse)
-3. [Önceden prova etmek istersen](#3-önceden-prova-etmek-istersen)
-4. [Başka bir bilgisayarda sıfırdan kurulum](#4-başka-bir-bilgisayarda-sıfırdan-kurulum)
-5. [GitHub'dan indirme ve güncelleme](#5-githubdan-indirme-ve-güncelleme)
-6. [Diğer bilgiler](#6-diğer-bilgiler)
+## 1. Kurulum
 
----
+Proje klasörünü bilgisayarına al:
+- GitHub'dan: `git clone https://github.com/Beyzanurekerr/Genvision_Yarisma.git`
+- ya da zip/USB ile kopyala.
 
-## 1. Final günü — yapılacaklar listesi
+Python kurulu mu kontrol et (PowerShell'de):
+```
+python --version
+```
+Sürüm numarası çıkmazsa python.org/downloads'tan indirip kur ("Add python.exe
+to PATH" kutusunu işaretle).
 
-Sırayla, atlamadan:
+## 2. Requirements / Ortam Kurulumu
 
-**☐ 1.** `data\final_test\` klasörünü aç, İÇİNDEKİ HER ŞEYİ SİL (eski deneme
-dosyaları kalmasın — kalırsa gerçek dosyalarla karışıp hata verir).
+Proje klasörünün içinde:
+```
+python -m venv venv
+venv\Scripts\python.exe -m pip install -r requirements-inference.txt
+```
+Bu, sadece BİR KEZ (internet varken) yapılır. Bu bilgisayarda (Casper'ın
+bilgisayarı) zaten yapıldı, `venv\` klasörü hazır — bu adımı atlayabilirsin.
+Başka bir bilgisayarda ilk kez kuruyorsan bu iki komutu çalıştır.
 
-**☐ 2.** USB'deki şifreyi organizasyon açıklayınca, test dosyalarını
-kopyalayıp `data\final_test\` klasörüne yapıştır.
+## 3. Test Verilerini Projeye Koymak
 
-**☐ 3.** Dosya Gezgini'nde `Genvision_Yarisma` klasörünü aç (nereye
-kopyaladıysan/kurduysan orada — bilgisayara göre değişir, sabit bir yol
-YOKTUR). Adres çubuğuna tıkla, `powershell` yaz, Enter'a bas — PowerShell
-doğrudan o klasörde açılır (hangi bilgisayar/kullanıcı adı olursa olsun
-çalışır). VS Code kullanıyorsan `` Ctrl+` `` ile terminal aç — sağ üstteki
-▷ "Run" butonuna BASMA.
+USB'den gelen (ya da denemek için `data\test\` klasöründeki sahte) test
+dosyalarını şu klasöre kopyala:
+```
+data\final_test\
+```
+(Önceden bir şey koyduysan, yenilerini koymadan önce içini boşalt.)
 
-**☐ 4.** Şunu yapıştır, Enter:
+## 4. Dosya İçine Girmek
+
+Proje klasörünü Dosya Gezgini'nde aç, adres çubuğuna `powershell` yaz, Enter'a
+bas — PowerShell doğrudan orada açılır. Sonra:
 ```
 cd src
 ```
 
-**☐ 5.** Şunu yapıştır, Enter:
+## 5. Çalıştırıp JSON'a Kaydetmek
+
 ```
 ..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json
 ```
 
-**☐ 6.** Ekranda çıkan `MASTER -> ...`, `KANSER -> ...`, `PAH -> ...`,
-`CFTR -> ...` satırlarını oku. Kontrol edeceğin tek şey: **4 satırın 4'ünde
-de bir dosya adı yazıyor mu** (hiçbiri `eşleşme YOK` ya da `BELİRSİZ`
-demiyor mu)? Diyorsa → [Bölüm 2](#2-bir-şey-ters-giderse)'deki "Otomatik
-eşleşme yanlış/eksik çıktıysa" kısmına git, dosyaları elle belirt (o kısımda
-tam komut hazır, sadece `<yol>` yerlerini yazman yeterli).
-
-**☐ 7.** En altta şu iki satırı gördün mü kontrol et:
+Ekranda her panelin (MASTER/KANSER/PAH/CFTR) hangi dosyayla eşleştiğini
+yazar. Sonunda:
 ```
 Doğrulama OK: ... tahmin, ... benzersiz (panel,id).
 Kaydedildi: ...TEAM_918091_FINAL.json ...
 ```
-**Görmediysen (internet yok, bana ulaşamazsın — kendi başına karar ver):**
-ekranda kırmızı/`Error`/`Traceback` yazan satırı oku, [Bölüm 2](#2-bir-şey-ters-giderse)'de
-o hatayla eşleşen maddeye bak (`ModuleNotFoundError`, sütun eksik hatası vb.
-zaten orada tek tek yazıyor). Hiçbiri uymuyorsa: komutu AYNEN tekrar dene
-(bazen tek seferlik bir yazım hatasıdır) — hâlâ olmuyorsa Bölüm 2'deki elle
-belirtme komutuyla dene.
+görürsen, `TEAM_918091_FINAL.json` proje kök klasöründe hazırdır. Bu dosyayı
+organizasyonun web sistemine yükle — teslim budur.
 
-**☐ 8.** `TEAM_918091_FINAL.json` dosyasını (proje kök klasöründe) organizasyonun
-web sistemine yükle. **Bu, teslimin kendisi.**
+## 6. Olası Durumlar (internet YOK, kendi başına karar vermen gerekecek)
 
----
-
-## 2. Bir şey ters giderse
-
-**Otomatik eşleşme yanlış/eksik çıktıysa** → dosyaları elle belirt (dosya
-adının gerçekte ne olduğu önemli değil, hangisini hangi panele verdiğin önemli):
+**Panel eşleşmesi yanlış/eksik çıktıysa** (ekranda `eşleşme YOK` ya da
+`BELİRSİZ` yazıyorsa) → dosyaları elle belirt:
 ```
 ..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --master <yol> --kanser <yol> --pah <yol> --cftr <yol>
 ```
+(`<yol>` yerine dosyanın gerçek yolunu yaz; dosya adı önemli değil, hangi
+dosyayı hangi panele verdiğin önemli.)
+
+**Dosya yolunu bulmanın en kolay yolu (yazmana bile gerek yok):**
+Terminalde `--master ` yazdıktan sonra (boşluk bırak, Enter'a basma), Dosya
+Gezgini'nde o dosyayı bul ve **fare ile terminal penceresinin üzerine
+sürükle bırak** — dosyanın tam yolu otomatik, tırnak içinde yapıştırılır.
+Aynısını `--kanser`, `--pah`, `--cftr` için de yap.
+
+*(İstersen elle de yazabilirsin: dosyaya Dosya Gezgini'nde SAĞ TIKLA →
+"Yol olarak kopyala" / "Copy as path" seç, sonra terminale yapıştır.)*
 
 **4 ayrı dosya değil, TEK dosyada "Panel" sütunu varsa:**
 ```
 ..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --input <tek dosya yolu>
 ```
 
-**`uret.py`'yi ÇALIŞTIRMA** — final günü işe yaramaz, sahte dosyalarla sınırlı.
+**`ModuleNotFoundError` hatası** → yanlış Python kullanıyorsun, mutlaka
+`venv\Scripts\python.exe` ile çalıştır (sistem Python'ı değil).
 
-**`ModuleNotFoundError`** → yanlış Python kullanıyorsun, mutlaka `venv\Scripts\python.exe` (sistem Python'ı değil).
+**`InconsistentVersionWarning` yazısı** → zararsız bir uyarı, göz ardı et,
+sonucu bozmaz.
 
-**`InconsistentVersionWarning`** → zararsız, göz ardı et.
+**"Sütun eksik" hatası** → hangi sütunların eksik olduğunu isim isim
+yazar; doğru dosyayı/paneli verdiğinden emin ol.
 
-**Sütun eksik hatası** → hangi sütunların eksik olduğu mesajda yazar; doğru panel/dosya olduğunu kontrol et.
+**Ayraç/ondalık virgül/farklı ID sütun adı** (Excel'den farklı kaydedilmiş
+dosya) → script bunu otomatik algılayıp düzeltir, ekstra bir şey yapmana
+gerek yok, konsola ne yaptığını yazar.
 
-**Ayraç/ondalık virgül/farklı ID sütun adı** → script otomatik algılayıp düzeltir, konsola ne yaptığını yazar; ekstra bir şey yapmana gerek yok.
+**Hiçbiri uymuyorsa** → komutu AYNEN bir daha dene (bazen tek seferlik bir
+yazım hatasıdır); olmuyorsa yukarıdaki "elle belirtme" komutuyla dene.
+**`uret.py`'yi ÇALIŞTIRMA** — adına rağmen işe yaramaz, sabit/sahte
+dosyalarla sınırlı.
 
----
+**Birden fazla yükleme yapabilirsin** — süre bitene kadarki SON geçerli
+JSON dosyası teslim sayılır, ilk denemede hata olması sorun değil.
 
-## 3. Önceden prova etmek istersen
+## 7. Proje Dosyaları — Ne İşe Yararlar
 
-Bu, `--dry-run` DEĞİL — final günü kullanacağın GERÇEK komutun aynısını,
-sahte dosyalarla dener. Yukarıdaki 1-8 adımların bire bir provası:
+Hepsi `..\venv\Scripts\python.exe <dosya>` ile çalıştırılır (önce `cd` ile o
+dosyanın bulunduğu klasöre girmen gerekir).
 
-**1.** `data\test\` klasöründeki sahte dosyaları `data\final_test\`'e kopyala:
-```
-copy data\test\YARISMA_TEST_*.csv data\final_test\
-```
+### `src\` (asıl kullanılan pipeline)
 
-**2.** Final günü kullanacağın GERÇEK komutu (hiç değiştirmeden) çalıştır:
-```
-cd src
-..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json
-```
+| Dosya | Ne işe yarar | Çalıştırma |
+|---|---|---|
+| `predict_final.py` | **Final tahmin/JSON üretici** — bu README'nin konusu. | `predict_final.py --out ..\TEAM_918091_FINAL.json` |
+| `features.py` | Öznitelik mühendisliği (Grantham mesafesi, eksiklik sinyalleri, kategorik kodlama). Kendi başına çalıştırılmaz, diğer dosyalar kullanır. | — |
+| `tune.py` | Optuna ile hiperparametre arama (en iyi ayarları bulur). | `tune.py` |
+| `train_final.py` | Ayarlanmış hiperparametrelerle çapraz doğrulama (CV/OOF) sonuçları üretir. | `train_final.py [PANEL]` |
+| `train_deploy.py` | Seçilen modeli TÜM veriyle eğitip `models\deploy\*.joblib` paketlerini üretir. | `train_deploy.py` |
+| `check_determinism.py` | Aynı veriyi iki kez tahmin ettirip sonucun birebir aynı çıktığını doğrular. | `check_determinism.py` |
+| `guard_scan.py` | Kalibrasyon kayması güvenlik ağının (GUARD_HI/LO) en iyi değerini tarar/ölçer. | `guard_scan.py` |
+| `overfit_check.py` | Aşırı öğrenme/veri sızıntısı denetimi (train-OOF boşluğu + etiket karıştırma testi). | `overfit_check.py [PANEL]` |
+| `seed_stability.py` | Farklı rastgele tohumlarla sonucun ne kadar kararlı olduğunu ölçer. | `seed_stability.py` |
+| `shap_analysis.py` | SHAP ile hangi özniteliğin kararı ne kadar etkilediğini analiz eder. | `shap_analysis.py` |
+| `plot_figures.py` | Rapor için grafik/görsel üretir. | `plot_figures.py` |
+| `generate_report.py` | Proje detay raporu (PDR) metnini otomatik üretir. | `generate_report.py` |
+| `train.py` | Optuna'dan önceki temel/ilk eğitim scripti (artık `tune.py`+`train_final.py` kullanılıyor). | `train.py` |
 
-**3.** Ekranda `MASTER -> YARISMA_TEST_MASTER.csv` gibi 4 satır ve en altta
-`Doğrulama OK` + `Kaydedildi` görmelisin — final günü tam olarak bunu göreceksin,
-sadece dosya adları farklı olacak.
+### Proje kökü
 
-**4. ÖNEMLİ:** Provadan sonra `data\final_test\` klasörünü boşalt (Bölüm 1,
-adım 1) — yoksa final günü bu sahte dosyalar gerçeklerle karışır.
+| Dosya | Ne işe yarar | Çalıştırma |
+|---|---|---|
+| `uret.py` | **Final günü KULLANMA** — sadece `data\test\` içindeki sabit/sahte dosyalarla hızlı yerel deneme. | `uret.py` |
+| `generate_dummy_test.py` | `data\test\` klasörü için eğitim verisinden 50 satırlık, etiketsiz sahte test dosyaları üretir. | `generate_dummy_test.py` |
 
-*(Sadece format/JSON sağlık kontrolü istiyorsan, gerçek dosya kopyalamadan
-`..\venv\Scripts\python.exe predict_final.py --dry-run` da çalışır — ama bu
-gerçek final komutunu DENEMEZ, sadece kendi eğitim verimizi kullanır.)*
+### `Eski_Deneysel_Kodlar\` (çoğu arşiv/deney — bir istisna var)
 
----
+| Dosya | Ne işe yarar | Çalıştırma |
+|---|---|---|
+| `threshold.py` | **DİKKAT — bu aslında aktif pipeline'ın parçası** (arşiv klasöründe duruyor ama gerçekten kullanılıyor): test-bilinçli eşik kalibrasyonu + panel başına model seçimi. `train_final.py`'den sonra, `train_deploy.py`'den ÖNCE çalıştırılmalı. | `threshold.py` |
+| `fetch_clinvar_grantham.py` | ClinVar'dan Grantham-mesafe/patojenite ilişkisini öğrenir (dış veri denemesi). | `fetch_clinvar_grantham.py` |
+| `ext_grantham_ablation.py` | Yukarıdakini kendi verimizde test eder — sonuç: eşiği geçemedi, modele eklenmedi. | `ext_grantham_ablation.py` |
+| `leakage_check.py` | Sızıntı denetimi: tek bir özniteliğin tek başına etiketi "ele verip vermediğini" tarar. | `leakage_check.py` |
+| `check_determinism.py` | `src\check_determinism.py`'nin eski/orijinal kopyası. | — (güncel olan `src\`'deki) |
+| Diğerleri (`main.py`, `run_all.py`, `predict_test.py`, `check_*.py`, `smote_experiment.py`, `visualize_mapper.py`, `catboost_screen.py`) | Çeşitli deneysel kontrol/analiz scriptleri — aktif final pipeline'ının parçası DEĞİL, geliştirme sürecinde kullanıldı. | — |
 
-## 4. Başka bir bilgisayarda sıfırdan kurulum
+### `external_validation\`
 
-**Ne zaman:** final günü DEĞİL, bunu ÖNCEDEN (internetin olduğu bir zamanda) yapın.
+ClinVar+gnomAD'dan bağımsız dış test seti üretimi. Ayrıntı: `external_validation\README.md`.
 
-**Neden gerekli:** `venv/` klasörü, oluşturulduğu bilgisayardaki bir Python
-kurulumuna bağımlıdır (venv'in genel bir sınırı, projeye özel değil).
-`venv/` klasörünü başka bir bilgisayara kopyalamak İŞE YARAMAZ — o
-bilgisayarda sıfırdan oluşturulması gerekir.
-
-**Adımlar:**
-
-1. **Proje klasörünü o bilgisayara taşıyın** — GitHub'dan klonlayarak (bkz.
-   [Bölüm 5](#5-githubdan-indirme-ve-güncelleme)) ya da zip/USB ile
-   kopyalayarak. `venv/` klasörünü taşımanıza gerek yok, boşuna yer kaplar;
-   burada sıfırdan oluşturulacak.
-
-2. **O bilgisayarda Python kurulu mu kontrol edin.** PowerShell'de:
-   ```
-   python --version
-   ```
-   - Sürüm numarası çıkarsa → 3. adıma geçin.
-   - "Tanınmıyor" derse → python.org/downloads'tan indirip kurun
-     ("Add python.exe to PATH" kutucuğunu MUTLAKA işaretleyin), PowerShell'i
-     kapatıp yeniden açın, tekrar deneyin.
-
-3. **Proje klasörüne girin** (Dosya Gezgini'nde klasöre gidip adres çubuğuna
-   `powershell` yazarsanız otomatik oraya açılır, yol ezberlemenize gerek yok).
-
-4. **venv oluşturun ve paketleri kurun** (internet gerekir, ~5-10 dk):
-   ```
-   python -m venv venv
-   venv\Scripts\python.exe -m pip install -r requirements-inference.txt
-   ```
-
-5. **Hâlâ internet varken test edin:**
-   ```
-   cd src
-   ..\venv\Scripts\python.exe predict_final.py --dry-run
-   ```
-   `Doğrulama OK` ve `Kaydedildi` görürseniz, o bilgisayar da hazır demektir.
-
-6. Bu adımları o bilgisayarda BİR KEZ, önceden yapmanız yeterli — final günü
-   sadece [Bölüm 1](#1-final-günü--yapılacaklar-listesi)'deki komutu
-   çalıştıracaksınız (internet gerekmez, kurulum tekrarlanmaz).
-
-Bu tarif 13.09.2026'da test edildi: PyPI'dan gelen paket sürümleri mevcut
-`models/deploy/*.joblib` dosyalarıyla birebir uyumlu çıktı, sonuçlar ana
-bilgisayarla birebir eşleşti.
-
----
-
-## 5. GitHub'dan indirme ve güncelleme
-
-Proje `github.com/Beyzanurekerr/Genvision_Yarisma` adresinde. İki yöntem var,
-**farkı ileride güncelleme alıp almayacağınız:**
-
-**A) `git clone` ile (ÖNERİLEN — güncelleme almak istiyorsanız):**
-```
-git clone https://github.com/Beyzanurekerr/Genvision_Yarisma.git
-```
-Bu, `.git` klasörünü de indirir. İleride kod güncellenirse, proje klasörüne
-girip şunu çalıştırmanız yeterli:
-```
-git pull
-```
-
-**B) "Code > Download ZIP" ile:**
-Bir zip dosyası indirir, `.git` klasörü İÇERMEZ — yani `git pull` ÇALIŞMAZ
-("not a git repository" hatası verir). Güncelleme almak isterseniz, o
-klasörün içinde şunu çalıştırın (mevcut yerel değişiklikleri GitHub'daki
-hâliyle değiştirir, dikkatli kullanın):
-```
-git init
-git remote add origin https://github.com/Beyzanurekerr/Genvision_Yarisma.git
-git fetch origin
-git reset --hard origin/main
-```
-Bundan sonra artık gerçek bir git deposu olduğu için sadece `git pull` yeterli.
-
-Zip'i açarken dikkat: Windows bazen zip'in adıyla aynı isimde bir üst klasör
-daha oluşturup içine açar (iç içe `Genvision_Yarisma\Genvision_Yarisma\...`
-gibi). Bu koda zarar vermez, sadece `cd` ile doğru derinliğe (src/data/models
-klasörlerini gördüğünüz yere) inmeniz gerekir.
-
-**Klasör adını değiştirirsem ne olur:** Hiçbir Python dosyasında proje
-klasörünün adı sabit (hardcoded) yazılı değil — farklı bir isimle de
-sorunsuz çalışır.
-
----
-
-## 6. Diğer bilgiler
-
-- **Modellerin nasıl seçildiği/kalibre edildiği:** `models/threshold_results.json`, `src/guard_scan.py`, `models/guard_scan_results.json`
-- **Bağımsız dış veri doğrulaması** (ClinVar+gnomAD, modele sokulmadı — sebebi belgede): `external_validation/README.md`
-- **Kalibrasyon kayması güvenlik ağı:** `predict_final.py`, sabit eşiğin ürettiği pozitif oran beklenenden çok saparsa (1.8x üstü / 0.55x altı) otomatik olarak oran-tabanlı bir eşiğe döner; bu normal ve beklenen bir davranıştır, konsola hangi modun kullanıldığını yazdırır.
+| Dosya | Ne işe yarar | Çalıştırma |
+|---|---|---|
+| `01_filtre.py` | ClinVar verisini indirip panel-gen eşlemesine göre filtreler. | `01_filtre.py` |
+| `02_gnomad_benign.py` | PAH/CFTR için gnomAD'dan sık görülen (muhtemelen benign) varyantları çeker. | `02_gnomad_benign.py` |
+| `03_stres_testi_kur.py` | Panel başına, resmi şartnameye uygun oranlı final dış test setini kurar. | `03_stres_testi_kur.py` |
