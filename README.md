@@ -38,15 +38,23 @@ cd src
 ```
 
 **☐ 6.** Ekranda çıkan `MASTER -> ...`, `KANSER -> ...`, `PAH -> ...`,
-`CFTR -> ...` satırlarını oku — her panelin karşısında GERÇEKTEN o panele ait
-bir dosya adı yazıyor mu kontrol et. Yanlış/eksik görünüyorsa bkz. [Bölüm 2](#2-bir-şey-ters-giderse).
+`CFTR -> ...` satırlarını oku. Kontrol edeceğin tek şey: **4 satırın 4'ünde
+de bir dosya adı yazıyor mu** (hiçbiri `eşleşme YOK` ya da `BELİRSİZ`
+demiyor mu)? Diyorsa → [Bölüm 2](#2-bir-şey-ters-giderse)'deki "Otomatik
+eşleşme yanlış/eksik çıktıysa" kısmına git, dosyaları elle belirt (o kısımda
+tam komut hazır, sadece `<yol>` yerlerini yazman yeterli).
 
 **☐ 7.** En altta şu iki satırı gördün mü kontrol et:
 ```
 Doğrulama OK: ... tahmin, ... benzersiz (panel,id).
 Kaydedildi: ...TEAM_918091_FINAL.json ...
 ```
-Görmediysen, ekrandaki hatayı olduğu gibi kopyala, Claude'a yapıştır.
+**Görmediysen (internet yok, bana ulaşamazsın — kendi başına karar ver):**
+ekranda kırmızı/`Error`/`Traceback` yazan satırı oku, [Bölüm 2](#2-bir-şey-ters-giderse)'de
+o hatayla eşleşen maddeye bak (`ModuleNotFoundError`, sütun eksik hatası vb.
+zaten orada tek tek yazıyor). Hiçbiri uymuyorsa: komutu AYNEN tekrar dene
+(bazen tek seferlik bir yazım hatasıdır) — hâlâ olmuyorsa Bölüm 2'deki elle
+belirtme komutuyla dene.
 
 **☐ 8.** `TEAM_918091_FINAL.json` dosyasını (proje kök klasöründe) organizasyonun
 web sistemine yükle. **Bu, teslimin kendisi.**
