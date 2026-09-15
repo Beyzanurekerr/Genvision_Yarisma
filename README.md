@@ -60,13 +60,28 @@ organizasyonun web sistemine yükle — teslim budur.
 
 ## 6. Olası Durumlar (internet YOK, kendi başına karar vermen gerekecek)
 
-**Panel eşleşmesi yanlış/eksik çıktıysa** (ekranda `eşleşme YOK` ya da
-`BELİRSİZ` yazıyorsa) → dosyaları elle belirt:
-```
-..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --master <yol> --kanser <yol> --pah <yol> --cftr <yol>
-```
-(`<yol>` yerine dosyanın gerçek yolunu yaz; dosya adı önemli değil, hangi
-dosyayı hangi panele verdiğin önemli.)
+### Dosya adı ne olursa olsun ilk yapılacak: iki senaryo
+
+**Senaryo 1 — verilen dosyaların adında panel adı geçiyor** (örn. "MASTER",
+"master_v2", "TEST-CFTR-2026" gibi -- büyük/küçük harf ve etraftaki ekler
+önemli değil, sadece kelimenin GEÇMESİ yeterli):
+1. Dosyaları `data\final_test\`'e koy.
+2. Komutu hiç yol yazmadan çalıştır (Bölüm 5'teki komutun aynısı).
+3. Ekrandaki `MASTER -> ...` eşleşmesini gözle kontrol et, doğruysa devam.
+
+**Senaryo 2 — dosya adında panel adı hiç geçmiyor** (tamamen anonim isimler):
+1. Organizasyondan (final günü kısa bilgilendirmede, sözlü/yazılı) hangi
+   dosyanın hangi panel olduğunu öğren -- kod bunu içerikten ANLAYAMAZ (4
+   panel aynı sütun şemasını paylaşıyor, bu teknik bir sınır).
+2. Elle belirt, her dosyayı doğru bayrağa ver:
+   ```
+   ..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --master <MASTER dosyası> --kanser <KANSER dosyası> --pah <PAH dosyası> --cftr <CFTR dosyası>
+   ```
+3. **Tek dosyada, içinde "Panel" sütunuyla geliyorsa** (4 ayrı dosya değil):
+   panel bilgisi zaten dosyanın içinde, dosya adı önemsiz:
+   ```
+   ..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --input <tek dosyanın yolu>
+   ```
 
 **Dosya yolunu bulmanın en kolay yolu (yazmana bile gerek yok):**
 Terminalde `--master ` yazdıktan sonra (boşluk bırak, Enter'a basma), Dosya
@@ -76,11 +91,6 @@ Aynısını `--kanser`, `--pah`, `--cftr` için de yap.
 
 *(İstersen elle de yazabilirsin: dosyaya Dosya Gezgini'nde SAĞ TIKLA →
 "Yol olarak kopyala" / "Copy as path" seç, sonra terminale yapıştır.)*
-
-**4 ayrı dosya değil, TEK dosyada "Panel" sütunu varsa:**
-```
-..\venv\Scripts\python.exe predict_final.py --out ..\TEAM_918091_FINAL.json --input <tek dosya yolu>
-```
 
 **`ModuleNotFoundError` hatası** → yanlış Python kullanıyorsun, mutlaka
 `venv\Scripts\python.exe` ile çalıştır (sistem Python'ı değil).
