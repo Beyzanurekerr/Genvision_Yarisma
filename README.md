@@ -8,12 +8,16 @@ dosyaları kalmasın — kalırsa gerçek dosyalarla karışıp hata verir).
 **☐ 2.** USB'deki şifreyi organizasyon açıklayınca, test dosyalarını
 kopyalayıp `data\final_test\` klasörüne yapıştır.
 
-**☐ 3.** PowerShell aç (ya da VS Code'da `` Ctrl+` `` ile terminal aç —
-sağ üstteki ▷ "Run" butonuna BASMA).
+**☐ 3.** Dosya Gezgini'nde `Genvision_Yarisma` klasörünü aç (nereye
+kopyaladıysan/kurduysan orada — bilgisayara göre değişir, sabit bir yol
+YOKTUR). Adres çubuğuna tıkla, `powershell` yaz, Enter'a bas — PowerShell
+doğrudan o klasörde açılır (hangi bilgisayar/kullanıcı adı olursa olsun
+çalışır). VS Code kullanıyorsan `` Ctrl+` `` ile terminal aç — sağ üstteki
+▷ "Run" butonuna BASMA.
 
 **☐ 4.** Şunu yapıştır, Enter:
 ```
-cd "C:\Users\Casper\Desktop\Genvision_Yarisma\src"
+cd src
 ```
 
 **☐ 5.** Şunu yapıştır, Enter:
