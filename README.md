@@ -31,7 +31,9 @@ dosyalarını şu klasöre kopyala:
 ```
 data\final_test\
 ```
-(Önceden bir şey koyduysan, yenilerini koymadan önce içini boşalt.)
+(Önceden bir şey koyduysan, yenilerini koymadan önce içindeki eski .csv
+dosyalarını sil — `README.md` dosyasına dokunma, o klasörün GitHub'da var
+olabilmesi için orada duruyor, silersen bir şey bozulmaz ama gerek yok.)
 
 ## 4. Dosya İçine Girmek
 
