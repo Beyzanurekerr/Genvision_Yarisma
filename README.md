@@ -94,6 +94,5 @@ gerçek final komutunu DENEMEZ, sadece kendi eğitim verimizi kullanır.)*
 
 ## Daha fazla bilgi
 
-- İkinci bilgisayarda sıfırdan kurulum, `venv` detayları, GitHub güncelleme: `IKINCI_BILGISAYAR.md`
 - Modellerin nasıl seçildiği/kalibre edildiği: `models/threshold_results.json`, `src/guard_scan.py`
 - Bağımsız dış veri doğrulaması: `external_validation/README.md`
